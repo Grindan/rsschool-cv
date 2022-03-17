@@ -42,3 +42,17 @@ function recycle(array) {
     return materials.map((el) => obj[el] || []);
 }
 ```
+
+## Education
+
+-   BSUIR, FCSN, 2014-2018, Bachelor degree
+
+## Work experience
+
+It's my first cv that will be deployed so I have nothing to share with you. _(Commercial projects are the secret)_
+
+## Languages
+
+-   Russian: Native
+-   English: Intermediate
+-   Polish: Basic
