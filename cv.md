@@ -12,6 +12,8 @@ I've graduated BSUIR and have already been working as software engineer for ~4 y
 
 ## Skills
 
+Skills names with endorsements amount from LinkedIn:
+
 -   Git - 19
 -   CSS - 19
 -   HTML - 17
