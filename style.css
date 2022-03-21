@@ -1,0 +1,228 @@
+:root {
+    --background-color: #be7cb9;
+    --light-color: #ddcbdd;
+    --border-color: #451b46;
+}
+
+* {
+    user-select: none;
+}
+
+@keyframes self-rotation {
+    0%,
+    50%,
+    100% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(10deg);
+    }
+    75% {
+        transform: rotate(-10deg);
+    }
+}
+
+body {
+    background: var(--background-color);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    height: 280px;
+}
+
+.dog-wrapper {
+    animation: self-rotation linear 3s infinite;
+}
+
+.dog {
+    position: relative;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background: var(--light-color);
+    border: 7px solid var(--border-color);
+}
+
+.eye {
+    position: absolute;
+    top: 80px;
+    background: var(--border-color);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.eye-left {
+    left: 66px;
+}
+
+.eye-rigth {
+    right: 66px;
+}
+
+.eye-rigth-spot {
+    position: absolute;
+    height: 40px;
+    width: 60px;
+    border: 3px solid var(--border-color);
+    border-radius: 27px 54px 27px 80px;
+    right: 45px;
+    top: 70px;
+    transform: rotate(5deg);
+}
+
+.nose {
+    position: absolute;
+    background: var(--border-color);
+    width: 30px;
+    height: 25px;
+    border-radius: 50%;
+    top: 115px;
+    left: 110px;
+}
+
+.mouse {
+    position: absolute;
+    top: 140px;
+    height: 10px;
+    width: 30px;
+    border: 6px solid var(--border-color);
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    border-top: 0;
+}
+
+.mouse-left {
+    left: 85px;
+}
+
+.mouse-right {
+    right: 85px;
+}
+
+.ear {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border-radius: 15px;
+    background: var(--light-color);
+    border: 7px solid var(--border-color);
+    border-bottom-right-radius: 50px;
+}
+
+.ear-left {
+    top: 15px;
+    left: 10px;
+    transform: rotate(25deg);
+}
+
+.ear-right {
+    top: 15px;
+    right: 10px;
+    transform: rotate(65deg);
+}
+
+.paw {
+    position: absolute;
+    top: 115px;
+    width: 40px;
+    height: 10px;
+    background: var(--light-color);
+    border: 7px solid var(--border-color);
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.paw-left {
+    left: -28px;
+    transform: rotate(-45deg);
+}
+
+.paw-right {
+    right: -28px;
+    transform: rotate(45deg);
+}
+
+.spots:before {
+    content: ' ';
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    border: 3px solid var(--border-color);
+    bottom: 12px;
+    left: 30px;
+    border-radius: 50px 0 0 20px;
+    transform: rotate(45deg);
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+}
+
+.spots:after {
+    content: ' ';
+    position: absolute;
+    width: 35px;
+    height: 23px;
+    border: 3px solid var(--border-color);
+    bottom: -2px;
+    left: 97px;
+    border-radius: 0px 30px 10px 0px;
+    transform: rotate(8deg);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+}
+
+@keyframes eye-blinking {
+    5%,
+    15% {
+        transform: scale(1, 0.05);
+    }
+    10%,
+    20%,
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes ear-movement {
+    80% {
+        left: 0px;
+        transform: rotate(65deg);
+    }
+    0%,
+    30%,
+    55%,
+    100% {
+        left: 10px;
+        transform: rotate(25deg);
+    }
+}
+
+.dog:hover .eye {
+    animation: eye-blinking 3s;
+}
+
+.dog:hover .ear-left {
+    animation: ear-movement 1s;
+}
+
+.dog:hover .paw-right {
+    transform: rotate(125deg);
+    top: 90px;
+}
+
+.shadow {
+    width: 100px;
+    height: 25px;
+    border-radius: 50% / 30%;
+    margin: 50px auto 0;
+    background: #be7cb9;
+    left: calc(50% - 55px);
+    filter: blur(5px) brightness(50%);
+}
